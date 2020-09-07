@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".ui.main.view.SubmitActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/black"
+            app:navigationIcon="@drawable/ic_back"
+            app:titleTextColor="@android:color/white" >
+
+            <ImageView
+                android:id="@+id/tv_header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo" />
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Project Submission"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/holo_orange_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/first_name"
+        android:layout_width="180dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_height="50dp"
+        android:autofillHints="Name"
+        android:background="@android:color/white"
+        android:hint="First Name"
+        android:paddingLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/last_name"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:autofillHints="Name"
+        android:background="@android:color/white"
+        android:hint="Last Name"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="Name"
+        android:background="@android:color/white"
+        android:hint="Email Address"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/link"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="344dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="Name"
+        android:background="@android:color/white"
+        android:hint="Project on Github (link)"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:elevation="10dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="100dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/link" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
