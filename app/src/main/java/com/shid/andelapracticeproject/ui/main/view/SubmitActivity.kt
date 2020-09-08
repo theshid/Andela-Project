@@ -44,7 +44,7 @@ class SubmitActivity : AppCompatActivity() {
         call = apiHelper.sendInformation(mail, first, nom, lien)
         call!!.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                
+
                     successDialog()
 
             }
