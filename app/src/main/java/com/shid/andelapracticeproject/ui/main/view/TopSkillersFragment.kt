@@ -20,6 +20,7 @@ import com.shid.andelapracticeproject.ui.base.MainViewModelFactory
 import com.shid.andelapracticeproject.ui.main.adapter.TopSkillAdapter
 import com.shid.andelapracticeproject.ui.main.viewmodel.MainViewModel
 import com.shid.andelapracticeproject.utils.Status
+import com.shid.andelapracticeproject.utils.setDivider
 import kotlinx.android.synthetic.main.fragment_top_learners.*
 import kotlinx.android.synthetic.main.fragment_top_learners.progressBar
 import kotlinx.android.synthetic.main.fragment_top_skillers.*
@@ -76,12 +77,13 @@ class TopSkillersFragment : Fragment() {
         val mRecyclerView: RecyclerView = view!!.findViewById(R.id.recyclerView2)
         mRecyclerView.layoutManager = LinearLayoutManager(view.context)
         adapter = TopSkillAdapter(arrayListOf())
-        mRecyclerView.addItemDecoration(
+        /*mRecyclerView.addItemDecoration(
             DividerItemDecoration(
                 mRecyclerView.context,
                 (mRecyclerView.layoutManager as LinearLayoutManager).orientation
             )
-        )
+        )*/
+        //mRecyclerView.setDivider(R.drawable.recycler_view_divider)
         mRecyclerView.adapter = adapter
     }
 
@@ -90,13 +92,18 @@ class TopSkillersFragment : Fragment() {
             it?.let { resource ->
                 when (resource.status) {
                     Status.SUCCESS -> {
+                        recyclerView2.visibility = View.VISIBLE
+                        progressBar2.visibility = View.GONE
                         resource.data?.let { skillers -> retrieveListSkills(skillers) }
                     }
                     Status.ERROR -> {
+                        recyclerView2.visibility = View.VISIBLE
+                        progressBar2.visibility = View.GONE
                         Toast.makeText(view.context, it.message, Toast.LENGTH_LONG).show()
                     }
                     Status.LOADING -> {
-
+                        progressBar2.visibility = View.VISIBLE
+                        recyclerView2.visibility = View.GONE
                     }
                 }
             }

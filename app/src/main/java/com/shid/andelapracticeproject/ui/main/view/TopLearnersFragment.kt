@@ -54,7 +54,7 @@ class TopLearnersFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_top_learners, container, false)
         setupViewModel(view)
         setupUI(view)
-        setupObservers(view)
+        setupObservers()
         return view
 
 
@@ -78,16 +78,16 @@ class TopLearnersFragment : Fragment() {
         mRecyclerView.layoutManager = LinearLayoutManager(context)
         adapter = TopLearnersAdapter(arrayListOf())
         mRecyclerView.adapter = adapter
-        mRecyclerView.addItemDecoration(
+        /*mRecyclerView.addItemDecoration(
             DividerItemDecoration(
                 mRecyclerView.context,
                 (mRecyclerView.layoutManager as LinearLayoutManager).orientation
             )
-        )
+        )*/
 
     }
 
-    private fun setupObservers(view: View) {
+    private fun setupObservers() {
 
         viewModel.getTopLearners().observe(this, Observer {
             it?.let { resource ->

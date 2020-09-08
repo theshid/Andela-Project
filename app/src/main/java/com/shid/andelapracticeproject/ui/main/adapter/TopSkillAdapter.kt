@@ -17,7 +17,7 @@ class TopSkillAdapter(private val list:ArrayList<SkillItem>): RecyclerView.Adapt
             itemView.apply {
                 image.setImageResource(R.drawable.skill)
                 applicant_name.text = learner.name
-                hours.text = learner.score.toString()
+                hours.text = learner.score.toString() + " " + "skill IQ Score,"+" " + learner.country+"."
             }
         }
     }

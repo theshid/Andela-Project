@@ -16,7 +16,7 @@ class TopLearnersAdapter(private val list:ArrayList<TopLearnersItem>): RecyclerV
             itemView.apply {
                 image.setImageResource(R.drawable.top_learner)
                 applicant_name.text = learner.name
-                hours.text = learner.hours.toString()
+                hours.text = learner.hours.toString() + " " + "learning hours,"+" " + learner.country+"."
             }
         }
     }

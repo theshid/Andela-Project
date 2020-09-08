@@ -40,6 +40,10 @@ class SubmitActivity : AppCompatActivity() {
         btn_submit.setOnClickListener {
             confirmationDialog()
         }
+
+        toolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun confirmationDialog() {
